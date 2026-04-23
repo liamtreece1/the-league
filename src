@@ -1,0 +1,17 @@
+src/
+├── app/
+│   ├── globals.css          ← REPLACE
+│   ├── layout.tsx           ← REPLACE
+│   └── page.tsx             ← REPLACE
+├── components/
+│   ├── ui/                  (shadcn components — leave alone)
+│   └── system/              ← NEW FOLDER
+│       ├── top-nav.tsx          ← NEW
+│       ├── system-notifications.tsx  ← NEW
+│       ├── hero-greeting.tsx    ← NEW
+│       ├── quest-log.tsx        ← NEW
+│       ├── inventory-preview.tsx ← NEW
+│       ├── level-up-modal.tsx   ← NEW
+│       └── system-data.ts       ← NEW (sample quests + loot)
+└── lib/
+    └── utils.ts             (already exists from shadcn init)
