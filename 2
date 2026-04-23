@@ -1,0 +1,119 @@
+import {
+  type LucideIcon,
+  Sword,
+  Dumbbell,
+  BookOpen,
+  Brain,
+  Flame,
+  Gem,
+  Scroll,
+  Shield,
+  Sparkles,
+  Swords,
+} from "lucide-react";
+
+export type QuestTier = "Daily" | "Weekly" | "Epic";
+
+export interface Quest {
+  id: string;
+  title: string;
+  description: string;
+  xp: number;
+  tier: QuestTier;
+  icon: LucideIcon;
+}
+
+export interface LootItem {
+  id: string;
+  name: string;
+  rarity: "Common" | "Uncommon" | "Rare" | "Epic" | "Legendary";
+  description: string;
+  icon: LucideIcon;
+}
+
+export const INITIAL_QUESTS: Quest[] = [
+  {
+    id: "q1",
+    title: "Train the Body",
+    description: "Complete a 30-minute workout session.",
+    xp: 150,
+    tier: "Daily",
+    icon: Dumbbell,
+  },
+  {
+    id: "q2",
+    title: "Study the Codex",
+    description: "Read 20 pages of a non-fiction book.",
+    xp: 120,
+    tier: "Daily",
+    icon: BookOpen,
+  },
+  {
+    id: "q3",
+    title: "Meditate in the Still Lands",
+    description: "10 minutes of focused meditation.",
+    xp: 80,
+    tier: "Daily",
+    icon: Brain,
+  },
+  {
+    id: "q4",
+    title: "Weekly Expedition: Deep Work",
+    description: "Complete 10 hours of distraction-free deep work.",
+    xp: 450,
+    tier: "Weekly",
+    icon: Sword,
+  },
+  {
+    id: "q5",
+    title: "Weekly Expedition: Forge Progress",
+    description: "Ship a feature for a personal project.",
+    xp: 500,
+    tier: "Weekly",
+    icon: Flame,
+  },
+];
+
+export const INVENTORY: LootItem[] = [
+  {
+    id: "i1",
+    name: "Minor Mana Crystal",
+    rarity: "Common",
+    description: "Restores focus during deep work sessions.",
+    icon: Gem,
+  },
+  {
+    id: "i2",
+    name: "Scroll of Clarity",
+    rarity: "Uncommon",
+    description: "Reveals the next step in any quest.",
+    icon: Scroll,
+  },
+  {
+    id: "i3",
+    name: "Aegis of the Disciplined",
+    rarity: "Rare",
+    description: "+10% XP for 24 hours. Stacks with streaks.",
+    icon: Shield,
+  },
+  {
+    id: "i4",
+    name: "Blade of First Light",
+    rarity: "Epic",
+    description: "Grants bonus XP on the first quest of the day.",
+    icon: Swords,
+  },
+];
+
+export const RARITY_COLOR: Record<LootItem["rarity"], string> = {
+  Common: "text-slate-300 border-slate-400/40",
+  Uncommon: "text-emerald-300 border-emerald-400/50",
+  Rare: "text-cyan-300 border-cyan-400/60",
+  Epic: "text-fuchsia-300 border-fuchsia-400/60",
+  Legendary: "text-amber-300 border-amber-400/70",
+};
+
+export const SPARKLES_ICON = Sparkles;
+
+/** XP needed to go from the start of level L to the start of L+1. */
+export const XP_PER_LEVEL = 1000;
